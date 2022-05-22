@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<title>Add Tracker</title>
+<body>
+    <a href="/profile" type="button">Go to dashboard</a>
+    {% if act == 1 %}
+        
+    <p>Tracker already exists.Please use different tracker!</p>
+        
+    
+
+    {%else%}
+        
+    <h1>Add a Tracker</h1>
+
+    <form action="/profile/create/{{user_id}}" method="POST" id="create-tracker-form">
+        
+        <div>
+        <label style="line-height:3.5em;">Name:</label>
+        <input type="text" name="name" required />
+        </div>
+        
+        <div>
+        <label style="line-height:3.5em;">Tracker type:</label>
+        <input type="text" name="type" required />
+        </div>
+        
+        <div>
+        <label style="line-height:3.5em;">Description:</label>
+        <input type="text" name="description" />
+        </div>
+        
+        <div style="line-height:3.5em;">
+        <input type="submit" value = "Submit">
+        </div>
+        
+    </form>
+    {% endif %}
+    
+</body>
+</html>

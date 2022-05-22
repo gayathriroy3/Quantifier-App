@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <title>Edit </title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        {% if act == 1 %}
+        
+        <p>Tracker already exists.Please use different tracker!</p>
+        {% else %}
+        <form action="/tracker/{{user_id}}/{{tracker_id}}/edit" method="POST" id="edit-tracker-form">
+        
+            <div>
+                <label style="line-height:3.5em;">Tracker id:</label>
+                <input type="text"name="tracker_id" value="{{tracker_id}}" disabled />
+            </div>
+
+            <div>
+                <label style="line-height:3.5em;">Tracker type:</label>
+                <input type="text" name="tracker_type" value="{{tracker_type}}" disabled />
+            </div>
+            
+            <div>
+            <label style="line-height:3.5em;">Tracker name:</label>
+            <input type="text" name="name" required />
+            </div>
+            
+            <div>
+            <label style="line-height:3.5em;">Description:</label>
+            <input type="text" name="description" />
+            </div>
+            
+            <div style="line-height:3.5em;">
+            <input type="submit" value = "Submit">
+            </div>
+            
+        </form>
+        {% endif %}
+    </body>
+</html>

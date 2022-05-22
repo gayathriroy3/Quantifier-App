@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+    <title>Home</title>
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+      </style>
+    <body>
+        <h1>Quantified Self</h1>
+        <h3>Track and measure yourself</h3>
+    
+<h1 class="title">
+  Welcome, {{session.name}}!</h1>
+  {% if trackers|length %}
+  <table id = "all-trackers">
+    <tr>
+    <th>SNo</th>
+    <th>Tracker</th>
+    <th>Last tracked </th>
+    <th>  </th>
+    <th>Actions</th>
+    </tr>
+    
+    {% for tracker in trackers %}
+        <tr>
+            <td> {{ loop.index }} </td>
+            <td> <a href="/tracker/{{tracker['user_id']}}/{{tracker['tracker_id']}}/log_details">{{tracker['name']}}</a> </td>
+            
+            <td>{{timestamps[loop.index-1][1]}} </td>
+            <td> <a href="/tracker/new-event/{{user_id}}/{{tracker['tracker_id']}}"> + </a> </td>
+            <td>
+                <a href="/tracker/{{tracker['user_id']}}/{{tracker['tracker_id']}}/edit" type="button">Edit</a>
+                <a href="/tracker/{{tracker['user_id']}}/{{tracker['tracker_id']}}/delete" type="button">Delete</a>
+            </td>
+        </tr>
+
+    {% endfor %}
+  </table>
+{% endif %}
+
+  
+
+</body>
+<a href="/profile/create/{{user_id}}" type="button">Add</a>
+<a href="/logout">logout</a>
+</html>
