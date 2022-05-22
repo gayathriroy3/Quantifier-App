@@ -6,10 +6,14 @@ values for these trackers along with notes. The user can edit or delete these lo
 
 TECHNOLOGIES USED
 1.FLASK – for web framework
+
 2.flask sqlalchemy – for querying the database
+
 3.flask render_template , request , redirect , url_for – for rendering the html template ,getting data from
 forms,redirecting to urls
+
 4.datetime- to find live time of logging new event for trackers
+
 5.html- create web pages
 
 # DB SCHEMA DESIGN
