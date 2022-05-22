@@ -46,4 +46,5 @@ deleted.
 # Setup
 Run the following command in the terminal
       ```python main.py```
+The Flask App will start running on local host ```http://127.0.0.1:5000/``` 
 
