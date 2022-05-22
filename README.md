@@ -43,3 +43,7 @@ event. When clicked on the tracker name hyperlink in this table, it takes to log
 details table where all log events of that tracker is shown. This can be edited or
 deleted.
 
+# Setup
+Run the following command in the terminal
+      python main.py
+
