@@ -45,5 +45,5 @@ deleted.
 
 # Setup
 Run the following command in the terminal
-      python main.py
+      ```python main.py
 
