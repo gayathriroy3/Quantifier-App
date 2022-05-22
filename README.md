@@ -1,5 +1,6 @@
 # Quantifier-App
 Quantifier Self App using flask
+
 The project is about developing a Quantifier App using Flask. It is used to keep track of certain
 activities.Here we call these activities as trackers. Using the app, a user can signup or login to the app and set
 values for these trackers along with notes. The user can edit or delete these logs or trackers.
